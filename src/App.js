@@ -9,10 +9,15 @@ function App() {
   const homeScore = 32;
   const [countAway, setAwayCount] = useState(awayScore);
   const [countHome, setHomeCount] = useState(homeScore);
+
+  // Adjust Scores with Buttons
   const onClickAwayFG = () => setAwayCount(countAway + 3);
   const onClickHomeFG = () => setHomeCount(countHome + 3);
   const onClickAwayTD = () => setAwayCount(countAway + 7);
   const onClickHomeTD = () => setHomeCount(countHome + 7);
+
+  // Reset Score
+  // const onClickResetScore = () => setAwayCount(countAway);
 
   return (
     <div className="container">
@@ -42,6 +47,14 @@ function App() {
         <div className="awayButtons">
           <button className="awayButtons__touchdown" onClick={onClickAwayTD}>Away Touchdown</button>
           <button className="awayButtons__fieldGoal" onClick={onClickAwayFG}>Away Field Goal</button>
+        </div>
+      </section>
+      <section className="buttons">
+        <div className="homeButtons">
+            <button className="reset_home_score" onClick={() => setHomeCount(homeScore)}>Reset Home</button>
+        </div>
+        <div className="awayButtons">
+          <button className="reset_away_score" onClick={() => setAwayCount(awayScore)}>Reset Away</button>
         </div>
       </section>
     </div>
