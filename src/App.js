@@ -16,8 +16,9 @@ function App() {
   const onClickAwayTD = () => setAwayCount(countAway + 7);
   const onClickHomeTD = () => setHomeCount(countHome + 7);
 
-  // Reset Score
-  // const onClickResetScore = () => setAwayCount(countAway);
+  // Reset scores
+  const resetAwayScore = () => setAwayCount(awayScore);
+  const resetHomeScore = () => setHomeCount(homeScore);
 
   return (
     <div className="container">
@@ -51,10 +52,10 @@ function App() {
       </section>
       <section className="buttons">
         <div className="homeButtons">
-            <button className="reset_home_score" onClick={() => setHomeCount(homeScore)}>Reset Home</button>
+            <button className="reset_home_score" onClick={resetHomeScore}>Reset Home</button>
         </div>
         <div className="awayButtons">
-          <button className="reset_away_score" onClick={() => setAwayCount(awayScore)}>Reset Away</button>
+          <button className="reset_away_score" onClick={resetAwayScore}>Reset Away</button>
         </div>
       </section>
     </div>
